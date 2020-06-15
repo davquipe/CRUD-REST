@@ -58,7 +58,7 @@ Widget _crearItem( BuildContext context, ProductoModel producto ) {
     child: ListTile(
       title: Text('${ producto.titulo } - ${ producto.valor }'),
       subtitle: Text( producto.id ),
-      onTap: () => Navigator.pushNamed(context, 'post'),
+      onTap: () => Navigator.pushNamed(context, 'post', arguments: producto),
     ),
   );
 

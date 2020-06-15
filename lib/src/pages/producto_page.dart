@@ -4,7 +4,6 @@ import 'package:formvalidation/src/models/producto_model.dart';
 import 'package:formvalidation/src/providers/productos_provider.dart';
 import 'package:formvalidation/src/utils/utils.dart' as utils;
 
-
 class ProductoPage extends StatefulWidget {
 
   @override
@@ -20,6 +19,12 @@ class _ProductoPageState extends State<ProductoPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    final ProductoModel proData = ModalRoute.of(context).settings.arguments;
+    if ( proData != null ) {
+      producto = proData;
+    }
+
     
     return Scaffold(
       appBar: AppBar(
@@ -138,8 +143,11 @@ class _ProductoPageState extends State<ProductoPage> {
     print( producto.valor );
     print( producto.disponible);
 
-    
+    if ( producto.id == null ) {
     productoProvider.createProducto(producto);
+    } else {
+      productoProvider.editarProducto(producto);
+    }
 
 
   }
