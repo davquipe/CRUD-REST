@@ -9,7 +9,7 @@ class ProductosProvider {
 
   final String _url = 'https://flutter-varios-b1007.firebaseio.com';
 
-  Future<bool> createProducto( ProductoModel producto ) async {
+  Future<bool> crearProducto( ProductoModel producto ) async {
 
     final url = '$_url/productos.json';
 

@@ -58,7 +58,7 @@ Widget _crearItem( BuildContext context, ProductoModel producto ) {
     child: ListTile(
       title: Text('${ producto.titulo } - ${ producto.valor }'),
       subtitle: Text( producto.id ),
-      onTap: () => Navigator.pushNamed(context, 'post', arguments: producto),
+      onTap: () => Navigator.pushNamed(context, 'producto', arguments: producto),
     ),
   );
 
@@ -70,7 +70,7 @@ _crearBoton(BuildContext context) {
   return FloatingActionButton(
     child: Icon( Icons.add ),
     backgroundColor: Colors.red,
-    onPressed: ()=> Navigator.pushNamed(context, 'post'),
+    onPressed: ()=> Navigator.pushNamed(context, 'producto'),
   );
 
 }
